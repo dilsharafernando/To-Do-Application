@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div>
+        <h1>My Tasks</h1>
+        <p class="date-display" id="dateDisplay"></p>
+      </div>
+      <span class="badge-count" id="totalBadge">0 Tasks</span>
+    </header>
+
+    <!-- Add Task Form -->
+    <form class="task-form" id="taskForm">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="What needs to be done?"
+        required
+        autocomplete="off"
+      />
+      <select id="prioritySelect" title="Priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="submit" class="btn-primary">Add</button>
+    </form>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <button id="clearCompletedBtn" class="btn-text">Clear Completed</button>
+    </div>
+
+    <!-- Task List -->
+    <ul class="task-list" id="taskList"></ul>
+
+    <!-- Footer Stats -->
+    <footer class="app-footer">
+      <span id="itemsLeft">0 items left</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
